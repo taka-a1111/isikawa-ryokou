@@ -70,17 +70,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
 .info-card-value{font-family:'Zen Maru Gothic',sans-serif;font-size:1.05rem;font-weight:700;line-height:1.4}
 .info-card-sub{font-size:.78rem;opacity:.75;margin-top:4px}
 
-/* ===== TIMELINE TABS ===== */
-.timeline-tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
-.tab-btn{padding:10px 20px;border-radius:24px;border:2px solid var(--border);background:transparent;cursor:pointer;font-family:'Noto Sans JP',sans-serif;font-size:.85rem;font-weight:500;color:var(--text-mid);transition:.2s;white-space:nowrap}
-.tab-btn:hover{border-color:var(--leaf);color:var(--forest)}
-.tab-btn.active{background:var(--forest);border-color:var(--forest);color:#fff}
-.tab-content{display:none}
-.tab-content.active{display:block}
+/* ===== TIMELINE ===== */
+.tab-content{display:block;margin-bottom:8px}
 
 /* ===== DAY HEADER ===== */
-.day-header{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-light) 100%);color:#fff;border-radius:var(--radius) var(--radius) 0 0;padding:20px 24px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.day-date{font-family:'Zen Maru Gothic',sans-serif;font-size:1.3rem;font-weight:700}
+.day-header{background:linear-gradient(135deg,var(--forest) 0%,var(--forest-light) 100%);color:#fff;border-radius:var(--radius) var(--radius) 0 0;padding:20px 24px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px}.day-date{font-family:'Zen Maru Gothic',sans-serif;font-size:1.3rem;font-weight:700}
 .day-theme{font-size:.85rem;opacity:.85;margin-top:2px}
 .day-badges{display:flex;gap:6px;flex-wrap:wrap}
 .badge{padding:4px 10px;border-radius:10px;font-size:.7rem;font-weight:700;letter-spacing:.06em}
@@ -90,7 +84,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
 .badge-hotel{background:var(--hotel-purple);color:#fff}
 
 /* ===== SPOTS ===== */
-.spots-wrap{background:#fff;border-radius:0 0 var(--radius) var(--radius);border:1px solid var(--border);border-top:none;overflow:hidden;margin-bottom:24px;box-shadow:var(--shadow-sm)}
+.spots-wrap{background:#fff;border-radius:0 0 var(--radius) var(--radius);border:1px solid var(--border);border-top:none;overflow:hidden;margin-bottom:32px;box-shadow:var(--shadow-sm)}
 .spot-item{padding:18px 24px;border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;transition:.15s}
 .spot-item:last-child{border-bottom:none}
 .spot-item:hover{background:var(--sand)}
@@ -113,8 +107,8 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
 .link-map:hover{background:#C8E6C9}
 
 /* ===== MAP ===== */
-.day-map{border-radius:var(--radius);overflow:hidden;height:260px;margin-bottom:32px;box-shadow:var(--shadow-sm)}
-.day-map iframe{width:100%;height:100%;border:none}
+.day-map{overflow:hidden;height:260px;margin-bottom:0;box-shadow:var(--shadow-sm)}
+.day-map iframe{width:100%;height:100%;border:none;display:block}
 
 /* ===== NOTICE ===== */
 .notice-box{background:#FFF8E8;border-left:4px solid var(--warning);border-radius:0 var(--radius) var(--radius) 0;padding:16px 20px;margin-bottom:16px}
@@ -182,44 +176,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
   </div>
 </section>
 
-<!-- TRAVEL INFO -->
-<section class="info-section">
-  <div class="info-inner">
-    <div class="info-card">
-      <div class="info-card-label">出発地</div>
-      <div class="info-card-value">名古屋市東区<br>砂田橋</div>
-    </div>
-    <div class="info-card">
-      <div class="info-card-label">移動手段</div>
-      <div class="info-card-value">マイカー</div>
-      <div class="info-card-sub">全日程・車あり</div>
-    </div>
-    <div class="info-card">
-      <div class="info-card-label">宿泊</div>
-      <div class="info-card-value">計3泊</div>
-      <div class="info-card-sub">キャンプ2 · 道の駅宿1</div>
-    </div>
-    <div class="info-card">
-      <div class="info-card-label">同行者</div>
-      <div class="info-card-value">大人 + 子ども</div>
-      <div class="info-card-sub">小学生以下</div>
-    </div>
-  </div>
-</section>
-
 <!-- ITINERARY -->
 <section class="section" id="itinerary">
   <div class="section-inner">
     <div class="section-label reveal">ITINERARY</div>
     <h2 class="section-title reveal">行程表</h2>
-
-    <!-- TABS -->
-    <div class="timeline-tabs reveal">
-      <button class="tab-btn active" onclick="switchTab(0)">7/23 木｜郡上八幡</button>
-      <button class="tab-btn" onclick="switchTab(1)">7/24 金｜白川郷→石川</button>
-      <button class="tab-btn" onclick="switchTab(2)">7/25 土｜金沢→福井</button>
-      <button class="tab-btn" onclick="switchTab(3)">7/26 日｜福井→帰宅</button>
-    </div>
 
     <!-- DAY 1 -->
     <div class="tab-content active" id="tab0">
@@ -232,6 +193,9 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <span class="badge badge-car">車あり</span>
           <span class="badge badge-camp">⛺️ キャンプ泊</span>
         </div>
+      </div>
+      <div class="day-map reveal">
+        <iframe src="https://www.google.com/maps?q=35.73399,136.98049&z=12&output=embed" loading="lazy"></iframe>
       </div>
       <div class="spots-wrap reveal">
         <div class="spot-item">
@@ -289,9 +253,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <div><span class="spot-open-badge open-ok">予約済</span></div>
         </div>
       </div>
-      <div class="day-map reveal">
-        <iframe src="https://www.google.com/maps?q=35.73399,136.98049&z=12&output=embed" loading="lazy"></iframe>
-      </div>
     </div>
 
     <!-- DAY 2 -->
@@ -305,6 +266,9 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <span class="badge badge-car">車あり</span>
           <span class="badge badge-hotel">🏨 道の駅泊</span>
         </div>
+      </div>
+      <div class="day-map reveal">
+        <iframe src="https://www.google.com/maps?q=36.25614,136.90612&z=10&output=embed" loading="lazy"></iframe>
       </div>
       <div class="spots-wrap reveal">
         <div class="spot-item">
@@ -362,9 +326,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <div><span class="spot-open-badge open-ok">予約済</span></div>
         </div>
       </div>
-      <div class="day-map reveal">
-        <iframe src="https://www.google.com/maps?q=36.25614,136.90612&z=10&output=embed" loading="lazy"></iframe>
-      </div>
     </div>
 
     <!-- DAY 3 -->
@@ -378,6 +339,9 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <span class="badge badge-car">車あり</span>
           <span class="badge badge-camp">⛺️ キャンプ泊</span>
         </div>
+      </div>
+      <div class="day-map reveal">
+        <iframe src="https://www.google.com/maps?q=36.56088,136.66265&z=10&output=embed" loading="lazy"></iframe>
       </div>
       <div class="spots-wrap reveal">
         <div class="spot-item">
@@ -489,9 +453,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <div><span class="spot-open-badge open-ok">土曜 営業</span></div>
         </div>
       </div>
-      <div class="day-map reveal">
-        <iframe src="https://www.google.com/maps?q=36.56088,136.66265&z=10&output=embed" loading="lazy"></iframe>
-      </div>
     </div>
 
     <!-- DAY 4 -->
@@ -506,7 +467,11 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
         </div>
       </div>
 
-      <div class="notice-box reveal">
+      <div class="day-map reveal">
+        <iframe src="https://www.google.com/maps?q=35.95028,136.18194&z=10&output=embed" loading="lazy"></iframe>
+      </div>
+
+      <div class="notice-box reveal" style="margin-top:20px">
         <strong>⚠️ かにファクトリー 甲羅組 開業直後に注意</strong>
         <p>2026年7月16日オープン予定の新施設のため、7/26訪問は開業10日目。混雑・駐車待ちが予想されます。出発前に公式サイト（kanifactory.com）で最新情報を確認してください。</p>
       </div>
@@ -585,9 +550,6 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--t
           <div><span class="spot-open-badge open-ok">日曜 営業</span></div>
         </div>
       </div>
-      <div class="day-map reveal">
-        <iframe src="https://www.google.com/maps?q=35.95028,136.18194&z=10&output=embed" loading="lazy"></iframe>
-      </div>
     </div>
   </div>
 </section>
@@ -636,16 +598,6 @@ const header = document.getElementById('siteHeader');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 60);
 });
-
-// Tab switch
-function switchTab(idx) {
-  document.querySelectorAll('.tab-content').forEach((el,i) => {
-    el.classList.toggle('active', i === idx);
-  });
-  document.querySelectorAll('.tab-btn').forEach((el,i) => {
-    el.classList.toggle('active', i === idx);
-  });
-}
 
 // Reveal
 const obs = new IntersectionObserver(entries => {
